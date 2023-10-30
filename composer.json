@@ -1,0 +1,17 @@
+{
+    "name": "ykk/laravel-logic",
+    "description": "laravel项目逻辑层",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ykk\\LaravelLogic\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "吴鹏飞",
+            "email": "871927431@qq.com"
+        }
+    ],
+    "require": {}
+}
