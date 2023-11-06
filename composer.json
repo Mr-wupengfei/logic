@@ -4,7 +4,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Ykk\\Tools\\": "src/Logic/"
+            "Ykk\\Logic\\": "src/Logic/"
         }
     },
     "authors": [
@@ -13,5 +13,13 @@
             "email": "871927431@qq.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ykk\\Logic\\Providers\\ToolServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
 }
