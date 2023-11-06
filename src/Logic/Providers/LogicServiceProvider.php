@@ -13,10 +13,10 @@ class LogicServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../../Resources/Config/logic.php' => config_path('ykk_logic.php')
+            __DIR__ . '/../../Resources/Config/ykk_logic.php' => config_path('ykk_logic.php')
         ]);
 
-        $this->mergeConfigFrom(__DIR__ . '/../../Resources/Config/logic.php', 'ykk_logic');
+        $this->mergeConfigFrom(__DIR__ . '/../../Resources/Config/ykk_logic.php', 'ykk_logic');
     }
 
 
