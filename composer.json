@@ -2,6 +2,10 @@
     "name": "ykk/laravel-logic",
     "description": "laravel项目逻辑层",
     "license": "MIT",
+    "keywords": [
+        "laravel",
+        "logic"
+    ],
     "autoload": {
         "psr-4": {
             "Ykk\\Logic\\": "src/Logic/"
@@ -17,7 +21,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Ykk\\Logic\\Providers\\ToolServiceProvider"
+                "Ykk\\Logic\\Providers\\LogicServiceProvider"
             ]
         }
     },
