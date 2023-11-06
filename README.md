@@ -26,6 +26,18 @@
 - 业务项目自身logic层继承该包的BaseLogic。
 - 业务项目request继承包内的BaseRequest。
 - request支持 matchFieldRuleHandle 和 matchruleRuleHandle 的callback，按照命名规则设置方法名，自动回调。
+    ```
+    // 字段名+失败规则
+    protected function matchUsernameRequiredHandle()
+    {
+        echo '我报错了';
+    }
+    // 所有该失败规则都会走这里
+    protected function matchRequiredHandle()
+    {
+        echo '112233';
+    }
+    ```
 - request验证中使用isEdit校验是否编辑场景，需要controller的编辑方法包含edit即可触发场景校验。（暂时不用）
 - 同一排序如何用
     ```
@@ -42,4 +54,3 @@
         ]);
     }
   ```
-  
