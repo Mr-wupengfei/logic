@@ -5,8 +5,10 @@ namespace Ykk\Logic\Bases;
 use Illuminate\Support\Arr;
 use Ykk\Logic\Constants\ErrorCode;
 use Ykk\Logic\Constants\HttpStatus;
+use Ykk\Logic\Exceptions\LogicException;
+use Ykk\Logic\Interfaces\LogicInterface;
 
-class BaseLogic
+abstract class BaseLogic implements LogicInterface
 {
     /**
      * 允许修改的类属性
@@ -256,11 +258,29 @@ class BaseLogic
     }
 
     /**
-     * @param int $per_page
+     * @param int $perPage
      */
-    public function setPerPage(int $per_page)
+    public function setPerPage(int $perPage)
     {
-        $this->perPage = $per_page;
+        $this->perPage = $perPage;
+    }
+
+    /**
+     * 获取单个
+     * @param null $id
+     * @return mixed
+     * @throws LogicException
+     */
+    public function getInfoById($model = null, $id = null)
+    {
+        try {
+            if (is_null($id)) {
+                $id = $this->params['id'] ?? null;
+            }
+            return $model->findOrFail($id);
+        } catch (\Throwable $e) {
+            throw new LogicException($e->getMessage());
+        }
     }
 
     /**
